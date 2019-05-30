@@ -1,0 +1,10 @@
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\bin\Debug\aula01-windowsForm.exe.config
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\bin\Debug\aula01-windowsForm.exe
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\bin\Debug\aula01-windowsForm.pdb
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\obj\Debug\aula01-windowsForm.csprojAssemblyReference.cache
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\obj\Debug\aula01_windowsForm.Form1.resources
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\obj\Debug\aula01_windowsForm.Properties.Resources.resources
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\obj\Debug\aula01-windowsForm.csproj.GenerateResource.cache
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\obj\Debug\aula01-windowsForm.csproj.CoreCompileInputs.cache
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\obj\Debug\aula01-windowsForm.exe
+C:\Users\aluno1\Source\Repos\aula01-windowsForm\aula01-windowsForm\obj\Debug\aula01-windowsForm.pdb
