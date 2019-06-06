@@ -150,6 +150,7 @@
             this.btnProximo.TabIndex = 11;
             this.btnProximo.Text = "Próximo";
             this.btnProximo.UseVisualStyleBackColor = true;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnNovo
             // 

@@ -53,6 +53,15 @@ namespace ProjetoCadastro
             btnSalvar.Enabled = false;
         }
 
+        private void mostra()
+        {
+            txtCodigo.Text = (FrmPrincipal.usuario[atual].cd_usuario) > 0? FrmPrincipal.usuario[atual].cd_usuario.ToString(): "";
+            txtNome.Text = FrmPrincipal.usuario[atual].nm_usuario.ToString();
+            txtNivel.Text = FrmPrincipal.usuario[atual].sg_nivel.ToString();
+            txtlogin.Text = FrmPrincipal.usuario[atual].nm_login.ToString();
+            txtSenha.Text = FrmPrincipal.usuario[atual].ds_senha.ToString();
+        }
+
         public frmUsuario()
         {
             InitializeComponent();
@@ -62,6 +71,7 @@ namespace ProjetoCadastro
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             Desabilita();
+            mostra();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -99,12 +109,16 @@ namespace ProjetoCadastro
             if(atual > 0)
             {
                 atual--;
+                mostra();
+            }
+        }
 
-                txtCodigo.Text  = FrmPrincipal.usuario[atual].cd_usuario.ToString();
-                txtNome.Text    = FrmPrincipal.usuario[atual].nm_usuario.ToString();
-                txtNivel.Text   = FrmPrincipal.usuario[atual].sg_nivel.ToString();
-                txtlogin.Text   = FrmPrincipal.usuario[atual].nm_login.ToString();
-                txtSenha.Text   = FrmPrincipal.usuario[atual].ds_senha.ToString();
+        private void btnProximo_Click(object sender, EventArgs e)
+        {
+            if (atual < FrmPrincipal.contUsu - 1)
+            {
+                atual++;
+                mostra();
             }
         }
     }
