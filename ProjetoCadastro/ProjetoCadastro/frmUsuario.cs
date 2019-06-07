@@ -13,6 +13,8 @@ namespace ProjetoCadastro
     public partial class frmUsuario : Form
     {
         int atual = 0;
+        bool novoCadastro = false;
+
         private void Habilita()
         {
             txtCodigo.Enabled = false;
@@ -65,7 +67,6 @@ namespace ProjetoCadastro
         public frmUsuario()
         {
             InitializeComponent();
-            
         }
 
         private void frmUsuario_Load(object sender, EventArgs e)
@@ -76,17 +77,52 @@ namespace ProjetoCadastro
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            Habilita();
+            if (FrmPrincipal.contUsu < 10)
+            {
+                txtCodigo.Text = (FrmPrincipal.contUsu + 1).ToString();
+                txtNome.Text = "";
+                txtNivel.Text = "";
+                txtlogin.Text = "";
+                txtSenha.Text = "";
+
+                Habilita();
+                txtNome.Focus();
+                novoCadastro = true;
+            }
+            else
+            {
+                MessageBox.Show("Operação Inválida");
+            }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            Habilita();
+            if (FrmPrincipal.contUsu < 10)
+            {
+                Habilita();
+                txtNome.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Operação Inválida");
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Desabilita();
+            if (novoCadastro)
+            {
+                FrmPrincipal.contUsu++;
+                atual++;
+            }
+            FrmPrincipal.usuario[FrmPrincipal.contUsu].cd_usuario = int.Parse(txtCodigo.Text);
+            FrmPrincipal.usuario[FrmPrincipal.contUsu].nm_usuario = txtNome.Text;
+            FrmPrincipal.usuario[FrmPrincipal.contUsu].sg_nivel = txtNivel.Text;
+            FrmPrincipal.usuario[FrmPrincipal.contUsu].nm_login = txtlogin.Text;
+            FrmPrincipal.usuario[FrmPrincipal.contUsu].ds_senha = txtSenha.Text;
+
+            novoCadastro = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -111,6 +147,10 @@ namespace ProjetoCadastro
                 atual--;
                 mostra();
             }
+            else
+            {
+                MessageBox.Show("não há registros anteriores");
+            }
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
@@ -119,6 +159,10 @@ namespace ProjetoCadastro
             {
                 atual++;
                 mostra();
+            }
+            else
+            {
+                MessageBox.Show("não há registros posteriores");
             }
         }
     }
