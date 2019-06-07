@@ -111,16 +111,26 @@ namespace ProjetoCadastro
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Desabilita();
+
+            int nr = 0;
+            
             if (novoCadastro)
             {
-                FrmPrincipal.contUsu++;
-                atual++;
+                atual = FrmPrincipal.contUsu;
+                nr = FrmPrincipal.contUsu++;
             }
-            FrmPrincipal.usuario[FrmPrincipal.contUsu].cd_usuario = int.Parse(txtCodigo.Text);
-            FrmPrincipal.usuario[FrmPrincipal.contUsu].nm_usuario = txtNome.Text;
-            FrmPrincipal.usuario[FrmPrincipal.contUsu].sg_nivel = txtNivel.Text;
-            FrmPrincipal.usuario[FrmPrincipal.contUsu].nm_login = txtlogin.Text;
-            FrmPrincipal.usuario[FrmPrincipal.contUsu].ds_senha = txtSenha.Text;
+            else
+            {
+                nr = int.Parse(txtCodigo.Text) - 1;
+            }
+
+            FrmPrincipal.usuario[nr].cd_usuario = int.Parse(txtCodigo.Text);
+            FrmPrincipal.usuario[nr].nm_usuario = txtNome.Text;
+            FrmPrincipal.usuario[nr].sg_nivel = txtNivel.Text;
+            FrmPrincipal.usuario[nr].nm_login = txtlogin.Text;
+            FrmPrincipal.usuario[nr].ds_senha = txtSenha.Text;
+
+            
 
             novoCadastro = false;
         }
