@@ -57,15 +57,13 @@ namespace ProjetoCadastro
 
         private void mostra()
         {
-            int nr = atual;
-
             if (FrmPrincipal.contUsu > 0)
             {
-                txtCodigo.Text = (FrmPrincipal.usuario[nr].cd_usuario) > 0 ? FrmPrincipal.usuario[nr].cd_usuario.ToString() : "";
-                txtNome.Text = FrmPrincipal.usuario[nr].nm_usuario;
-                txtNivel.Text = FrmPrincipal.usuario[nr].sg_nivel;
-                txtlogin.Text = FrmPrincipal.usuario[nr].nm_login;
-                txtSenha.Text = FrmPrincipal.usuario[nr].ds_senha;
+                txtCodigo.Text = (FrmPrincipal.usuario[atual].cd_usuario) > 0 ? FrmPrincipal.usuario[atual].cd_usuario.ToString() : "";
+                txtNome.Text = FrmPrincipal.usuario[atual].nm_usuario;
+                txtNivel.Text = FrmPrincipal.usuario[atual].sg_nivel;
+                txtlogin.Text = FrmPrincipal.usuario[atual].nm_login;
+                txtSenha.Text = FrmPrincipal.usuario[atual].ds_senha;
             }
             else
             {
@@ -193,6 +191,7 @@ namespace ProjetoCadastro
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             int excluir = int.Parse(txtCodigo.Text) - 1 ;
+
             if (atual >= 0)
             {
                 for (int i = 0; i < (FrmPrincipal.usuario.Length); i++)
