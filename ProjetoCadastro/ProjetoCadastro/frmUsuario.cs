@@ -57,11 +57,25 @@ namespace ProjetoCadastro
 
         private void mostra()
         {
-            txtCodigo.Text = (FrmPrincipal.usuario[atual].cd_usuario) > 0? FrmPrincipal.usuario[atual].cd_usuario.ToString(): "";
-            txtNome.Text = FrmPrincipal.usuario[atual].nm_usuario.ToString();
-            txtNivel.Text = FrmPrincipal.usuario[atual].sg_nivel.ToString();
-            txtlogin.Text = FrmPrincipal.usuario[atual].nm_login.ToString();
-            txtSenha.Text = FrmPrincipal.usuario[atual].ds_senha.ToString();
+            int nr = atual;
+
+            if (FrmPrincipal.contUsu > 0)
+            {
+                txtCodigo.Text = (FrmPrincipal.usuario[nr].cd_usuario) > 0 ? FrmPrincipal.usuario[nr].cd_usuario.ToString() : "";
+                txtNome.Text = FrmPrincipal.usuario[nr].nm_usuario;
+                txtNivel.Text = FrmPrincipal.usuario[nr].sg_nivel;
+                txtlogin.Text = FrmPrincipal.usuario[nr].nm_login;
+                txtSenha.Text = FrmPrincipal.usuario[nr].ds_senha;
+            }
+            else
+            {
+                txtCodigo.Text =  "";
+                txtNome.Text = "";
+                txtNivel.Text = "";
+                txtlogin.Text = "";
+                txtSenha.Text = "";
+            }
+            
         }
 
         public frmUsuario()
@@ -174,6 +188,26 @@ namespace ProjetoCadastro
             {
                 MessageBox.Show("não há registros posteriores");
             }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int excluir = int.Parse(txtCodigo.Text) - 1 ;
+            if (atual >= 0)
+            {
+                for (int i = 0; i < (FrmPrincipal.usuario.Length); i++)
+                {
+                    if (i != excluir)
+                    {
+                        FrmPrincipal.usuario[i] = FrmPrincipal.usuario[i];
+                    }
+                }
+
+                FrmPrincipal.contUsu--;
+                atual--;
+            }
+           
+            mostra();  
         }
     }
 }
