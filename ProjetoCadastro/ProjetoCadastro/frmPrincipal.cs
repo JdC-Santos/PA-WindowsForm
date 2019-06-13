@@ -36,7 +36,7 @@ namespace ProjetoCadastro
 
         }
 
-        public struct Forneced
+        public struct Fornecedor
         {
             public int cd_fornecedor;
             public string nome;
@@ -47,6 +47,7 @@ namespace ProjetoCadastro
         }
         public static Usuario[] usuario = new Usuario[10];
         public static Cliente[] cliente = new Cliente[10];
+        public static Fornecedor[] fornecedor = new Fornecedor[10];
 
         public FrmPrincipal()
         {

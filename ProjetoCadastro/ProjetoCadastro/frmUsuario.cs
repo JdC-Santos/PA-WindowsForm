@@ -32,7 +32,7 @@ namespace ProjetoCadastro
             btnPesquisar.Enabled = false;
             btnProximo.Enabled = false;
             btnSair.Enabled = false;
-            btnSalvar.Enabled = true; 
+            btnSalvar.Enabled = true;
         }
 
         private void Desabilita()
@@ -89,21 +89,27 @@ namespace ProjetoCadastro
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            //se a quantidade de usuarios registrador for menos que 10, registre
             if (FrmPrincipal.contUsu < 10)
             {
+                //cria um novo ID para o usuário que será registrado
                 txtCodigo.Text = (FrmPrincipal.contUsu + 1).ToString();
+                //limpa os campos do formulário para que o usuário possa preenche-los
                 txtNome.Text = "";
                 txtNivel.Text = "";
                 txtlogin.Text = "";
                 txtSenha.Text = "";
-
+                //habilita o formulário
                 Habilita();
+                //coloca o cursor dentro do input txtNome
                 txtNome.Focus();
+                //torna a variavel booleana verdadeira (para avisar que é um novo usuario e nao a atualizacao de um existente)
                 novoCadastro = true;
             }
             else
             {
-                MessageBox.Show("Operação Inválida");
+                //se a quantidade de usuariSos registrador for maior ou igual a 10, envia a mensagem de erro.
+                MessageBox.Show("Operação Inválida: nao é possivel cadastrar mais usuários");
             }
         }
 

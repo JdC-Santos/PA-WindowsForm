@@ -9,3 +9,14 @@ C:\Users\aluno1\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Deb
 C:\Users\aluno1\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.csproj.CoreCompileInputs.cache
 C:\Users\aluno1\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.exe
 C:\Users\aluno1\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.pdb
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\bin\Debug\ProjetoCadastro.exe.config
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\bin\Debug\ProjetoCadastro.exe
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\bin\Debug\ProjetoCadastro.pdb
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.csprojAssemblyReference.cache
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.FrmPrincipal.resources
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.frmUsuario.resources
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.Properties.Resources.resources
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.csproj.GenerateResource.cache
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.csproj.CoreCompileInputs.cache
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.exe
+C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.pdb
