@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace ProjetoCadastro
 {
-    public partial class frmUsuario : Form
+    public partial class frmCliente : Form
     {
         int atual = 0;
         bool novoCadastro = false;
 
         private void Habilita()
         {
-            txtCodigo.Enabled = false;
+            txtCod.Enabled = false;
             txtNome.Enabled = true;
-            txtNivel.Enabled = true;
-            txtlogin.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtBairro.Enabled = true;
+            txtCidade.Enabled = true;
+            txtCEP.Enabled = true;
+            txtCPF.Enabled = true;
+            txtLogin.Enabled = true;
             txtSenha.Enabled = true;
 
             btnAlterar.Enabled = false;
@@ -37,10 +41,14 @@ namespace ProjetoCadastro
 
         private void Desabilita()
         {
-            txtCodigo.Enabled = false;
+            txtCod.Enabled = false;
             txtNome.Enabled = false;
-            txtNivel.Enabled = false;
-            txtlogin.Enabled = false;
+            txtEndereco.Enabled = false;
+            txtBairro.Enabled = false;
+            txtCidade.Enabled = false;
+            txtCEP.Enabled = false;
+            txtCPF.Enabled = false;
+            txtLogin.Enabled = false;
             txtSenha.Enabled = false;
 
             btnAlterar.Enabled = true;
@@ -57,31 +65,39 @@ namespace ProjetoCadastro
 
         private void mostra()
         {
-            if (FrmPrincipal.contUsu > 0)
+            if (FrmPrincipal.contCli > 0)
             {
-                txtCodigo.Text = (FrmPrincipal.usuario[atual].cd_usuario) > 0 ? FrmPrincipal.usuario[atual].cd_usuario.ToString() : "";
-                txtNome.Text = FrmPrincipal.usuario[atual].nm_usuario;
-                txtNivel.Text = FrmPrincipal.usuario[atual].sg_nivel;
-                txtlogin.Text = FrmPrincipal.usuario[atual].nm_login;
-                txtSenha.Text = FrmPrincipal.usuario[atual].ds_senha;
+                txtCod.Text = (FrmPrincipal.cliente[atual].codigo) > 0 ? FrmPrincipal.cliente[atual].codigo.ToString() : "";
+                txtNome.Text = FrmPrincipal.cliente[atual].nome;
+                txtEndereco.Text = FrmPrincipal.cliente[atual].endereco;
+                txtBairro.Text = FrmPrincipal.cliente[atual].bairro;
+                txtCidade.Text = FrmPrincipal.cliente[atual].cidade;
+                txtCEP.Text = FrmPrincipal.cliente[atual].CEP;
+                txtCPF.Text = FrmPrincipal.cliente[atual].cpf;
+                txtLogin.Text = FrmPrincipal.cliente[atual].nm_login;
+                txtSenha.Text = FrmPrincipal.cliente[atual].ds_senha;
             }
             else
             {
-                txtCodigo.Text =  "";
+                txtCod.Text = "";
                 txtNome.Text = "";
-                txtNivel.Text = "";
-                txtlogin.Text = "";
+                txtEndereco.Text = "";
+                txtBairro.Text = "";
+                txtCidade.Text = "";
+                txtCEP.Text = "";
+                txtCPF.Text = "";
+                txtLogin.Text = "";
                 txtSenha.Text = "";
             }
-            
+
         }
 
-        public frmUsuario()
+        public frmCliente()
         {
             InitializeComponent();
         }
 
-        private void frmUsuario_Load(object sender, EventArgs e)
+        private void frmCliente_Load(object sender, EventArgs e)
         {
             Desabilita();
             mostra();
@@ -90,14 +106,18 @@ namespace ProjetoCadastro
         private void btnNovo_Click(object sender, EventArgs e)
         {
             //se a quantidade de usuarios registrador for menos que 10, registre
-            if (FrmPrincipal.contUsu < 10)
+            if (FrmPrincipal.contCli < 10)
             {
                 //cria um novo ID para o usuário que será registrado
-                txtCodigo.Text = (FrmPrincipal.contUsu + 1).ToString();
+                txtCod.Text = (FrmPrincipal.contCli + 1).ToString();
                 //limpa os campos do formulário para que o usuário possa preenche-los
                 txtNome.Text = "";
-                txtNivel.Text = "";
-                txtlogin.Text = "";
+                txtEndereco.Text = "";
+                txtBairro.Text = "";
+                txtCidade.Text = "";
+                txtCEP.Text = "";
+                txtCPF.Text = "";
+                txtLogin.Text = "";
                 txtSenha.Text = "";
                 //habilita o formulário
                 Habilita();
@@ -109,13 +129,13 @@ namespace ProjetoCadastro
             else
             {
                 //se a quantidade de usuariSos registrador for maior ou igual a 10, envia a mensagem de erro.
-                MessageBox.Show("Operação Inválida: nao é possivel cadastrar mais usuários");
+                MessageBox.Show("Operação Inválida: nao é possivel cadastrar mais clientes");
             }
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (FrmPrincipal.contUsu < 10)
+            if (FrmPrincipal.contCli < 10)
             {
                 Habilita();
                 txtNome.Focus();
@@ -131,22 +151,26 @@ namespace ProjetoCadastro
             Desabilita();
 
             int nr = 0;
-            
+
             if (novoCadastro)
             {
-                atual = FrmPrincipal.contUsu;
-                nr = FrmPrincipal.contUsu++;
+                atual = FrmPrincipal.contCli;
+                nr = FrmPrincipal.contCli++;
             }
             else
             {
-                nr = int.Parse(txtCodigo.Text) - 1;
+                nr = int.Parse(txtCod.Text) - 1;
             }
 
-            FrmPrincipal.usuario[nr].cd_usuario = int.Parse(txtCodigo.Text);
-            FrmPrincipal.usuario[nr].nm_usuario = txtNome.Text;
-            FrmPrincipal.usuario[nr].sg_nivel = txtNivel.Text;
-            FrmPrincipal.usuario[nr].nm_login = txtlogin.Text;
-            FrmPrincipal.usuario[nr].ds_senha = txtSenha.Text;
+            FrmPrincipal.cliente[nr].codigo = int.Parse(txtCod.Text);
+            FrmPrincipal.cliente[nr].nome = txtNome.Text;
+            FrmPrincipal.cliente[nr].endereco = txtEndereco.Text;
+            FrmPrincipal.cliente[nr].bairro = txtBairro.Text;
+            FrmPrincipal.cliente[nr].cidade = txtCidade.Text;
+            FrmPrincipal.cliente[nr].CEP = txtCEP.Text;
+            FrmPrincipal.cliente[nr].cpf = txtCPF.Text;
+            FrmPrincipal.cliente[nr].nm_login = txtLogin.Text;
+            FrmPrincipal.cliente[nr].ds_senha = txtSenha.Text;
 
             novoCadastro = false;
         }
@@ -156,11 +180,6 @@ namespace ProjetoCadastro
             Desabilita();
         }
 
-        private void txtCodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
@@ -168,7 +187,7 @@ namespace ProjetoCadastro
 
         private void btnAnterior_Click(object sender, EventArgs e)
         {
-            if(atual > 0)
+            if (atual > 0)
             {
                 atual--;
                 mostra();
@@ -181,7 +200,7 @@ namespace ProjetoCadastro
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            if (atual < FrmPrincipal.contUsu - 1)
+            if (atual < FrmPrincipal.contCli - 1)
             {
                 atual++;
                 mostra();
@@ -194,23 +213,23 @@ namespace ProjetoCadastro
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            int excluir = int.Parse(txtCodigo.Text) - 1 ;
+            int excluir = int.Parse(txtCod.Text) - 1;
 
             if (atual >= 0)
             {
-                for (int i = 0; i < (FrmPrincipal.usuario.Length); i++)
+                for (int i = 0; i < (FrmPrincipal.cliente.Length); i++)
                 {
                     if (i != excluir)
                     {
-                        FrmPrincipal.usuario[i] = FrmPrincipal.usuario[i];
+                        FrmPrincipal.cliente[i] = FrmPrincipal.cliente[i];
                     }
                 }
 
-                FrmPrincipal.contUsu--;
+                FrmPrincipal.contCli--;
                 atual--;
             }
-           
-            mostra();  
+
+            mostra();
         }
     }
 }

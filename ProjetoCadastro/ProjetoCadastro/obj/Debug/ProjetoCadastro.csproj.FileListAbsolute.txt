@@ -20,3 +20,4 @@ C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\
 C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.csproj.CoreCompileInputs.cache
 C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.exe
 C:\Users\professor\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.pdb
+C:\Users\aluno1\Downloads\PA-WindowsForm\ProjetoCadastro\ProjetoCadastro\obj\Debug\ProjetoCadastro.frmCliente.resources

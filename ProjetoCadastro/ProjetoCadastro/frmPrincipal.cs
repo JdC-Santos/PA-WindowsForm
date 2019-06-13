@@ -25,7 +25,8 @@ namespace ProjetoCadastro
 
         public struct Cliente
         {
-            public int cd_cliente;
+            public int codigo;
+            public string nome;
             public string endereco;
             public string bairro;
             public string cidade;
@@ -52,6 +53,12 @@ namespace ProjetoCadastro
         public FrmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente cli = new frmCliente();
+            cli.ShowDialog();
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
