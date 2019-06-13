@@ -22,7 +22,31 @@ namespace ProjetoCadastro
             public string nm_login;
             public string ds_senha;
         }
+
+        public struct Cliente
+        {
+            public int cd_cliente;
+            public string endereco;
+            public string bairro;
+            public string cidade;
+            public string CEP;
+            public string cpf;
+            public string nm_login;
+            public string ds_senha;
+
+        }
+
+        public struct Forneced
+        {
+            public int cd_fornecedor;
+            public string nome;
+            public string telefone;
+            public string cnpj;
+            public string login;
+            public string senha;
+        }
         public static Usuario[] usuario = new Usuario[10];
+        public static Cliente[] cliente = new Cliente[10];
 
         public FrmPrincipal()
         {
