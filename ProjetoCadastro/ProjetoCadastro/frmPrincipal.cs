@@ -39,7 +39,7 @@ namespace ProjetoCadastro
 
         public struct Fornecedor
         {
-            public int cd_fornecedor;
+            public int codigo;
             public string nome;
             public string telefone;
             public string cnpj;
@@ -59,6 +59,12 @@ namespace ProjetoCadastro
         {
             frmCliente cli = new frmCliente();
             cli.ShowDialog();
+        }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFornecedor ff = new frmFornecedor();
+            ff.ShowDialog();
         }
 
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
