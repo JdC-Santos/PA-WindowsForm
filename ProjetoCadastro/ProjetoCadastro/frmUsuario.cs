@@ -216,6 +216,7 @@ namespace ProjetoCadastro
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             pnlPesquisa.Visible = true;
+            txtPesquisa.Focus();
         }
 
         private void btnSairPesquisa_Click(object sender, EventArgs e)

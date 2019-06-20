@@ -49,9 +49,9 @@
             this.txtCod = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlPesquisa = new System.Windows.Forms.Panel();
+            this.btnSairPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
-            this.btnSairPesquisa = new System.Windows.Forms.Button();
             this.pnlPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,14 +241,25 @@
             // 
             // pnlPesquisa
             // 
+            this.pnlPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPesquisa.Controls.Add(this.btnSairPesquisa);
             this.pnlPesquisa.Controls.Add(this.txtPesquisa);
             this.pnlPesquisa.Controls.Add(this.btnOK);
-            this.pnlPesquisa.Location = new System.Drawing.Point(153, 56);
+            this.pnlPesquisa.Location = new System.Drawing.Point(153, 78);
             this.pnlPesquisa.Name = "pnlPesquisa";
             this.pnlPesquisa.Size = new System.Drawing.Size(499, 100);
-            this.pnlPesquisa.TabIndex = 65;
+            this.pnlPesquisa.TabIndex = 67;
             this.pnlPesquisa.Visible = false;
+            // 
+            // btnSairPesquisa
+            // 
+            this.btnSairPesquisa.Location = new System.Drawing.Point(276, 61);
+            this.btnSairPesquisa.Name = "btnSairPesquisa";
+            this.btnSairPesquisa.Size = new System.Drawing.Size(75, 23);
+            this.btnSairPesquisa.TabIndex = 2;
+            this.btnSairPesquisa.Text = "Sair";
+            this.btnSairPesquisa.UseVisualStyleBackColor = true;
+            this.btnSairPesquisa.Click += new System.EventHandler(this.btnSairPesquisa_Click);
             // 
             // txtPesquisa
             // 
@@ -265,15 +276,7 @@
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "Ok";
             this.btnOK.UseVisualStyleBackColor = true;
-            // 
-            // btnSairPesquisa
-            // 
-            this.btnSairPesquisa.Location = new System.Drawing.Point(276, 61);
-            this.btnSairPesquisa.Name = "btnSairPesquisa";
-            this.btnSairPesquisa.Size = new System.Drawing.Size(75, 23);
-            this.btnSairPesquisa.TabIndex = 2;
-            this.btnSairPesquisa.Text = "Sair";
-            this.btnSairPesquisa.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // frmFornecedor
             // 
