@@ -231,5 +231,40 @@ namespace ProjetoCadastro
 
             mostra();
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            pnlPesquisa.Visible = true;
+            txtPesquisa.Focus();
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+
+            if (txtPesquisa.Text != "")
+            {
+                for (i = 0; i < FrmPrincipal.contCli; i++)
+                {
+                    if (FrmPrincipal.cliente[i].nome == txtPesquisa.Text)
+                    {
+                        atual = i;
+                        mostra();
+                        break;
+                    }
+                }
+
+                if (i >= FrmPrincipal.contCli)
+                {
+                    MessageBox.Show("Não Encontrado");
+                }
+                pnlPesquisa.Visible = false;
+            }
+        }
+
+        private void btnSairPesquisa_Click(object sender, EventArgs e)
+        {
+            pnlPesquisa.Visible = false;
+        }
     }
 }

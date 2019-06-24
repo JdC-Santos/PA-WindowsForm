@@ -57,6 +57,11 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.pnlPesquisa = new System.Windows.Forms.Panel();
+            this.btnSairPesquisa = new System.Windows.Forms.Button();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.pnlPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -289,6 +294,7 @@
             this.btnPesquisar.TabIndex = 35;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // btnImprimir
             // 
@@ -319,11 +325,51 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // pnlPesquisa
+            // 
+            this.pnlPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlPesquisa.Controls.Add(this.btnSairPesquisa);
+            this.pnlPesquisa.Controls.Add(this.txtPesquisa);
+            this.pnlPesquisa.Controls.Add(this.btnOK);
+            this.pnlPesquisa.Location = new System.Drawing.Point(150, 78);
+            this.pnlPesquisa.Name = "pnlPesquisa";
+            this.pnlPesquisa.Size = new System.Drawing.Size(499, 100);
+            this.pnlPesquisa.TabIndex = 67;
+            this.pnlPesquisa.Visible = false;
+            // 
+            // btnSairPesquisa
+            // 
+            this.btnSairPesquisa.Location = new System.Drawing.Point(276, 61);
+            this.btnSairPesquisa.Name = "btnSairPesquisa";
+            this.btnSairPesquisa.Size = new System.Drawing.Size(75, 23);
+            this.btnSairPesquisa.TabIndex = 2;
+            this.btnSairPesquisa.Text = "Sair";
+            this.btnSairPesquisa.UseVisualStyleBackColor = true;
+            this.btnSairPesquisa.Click += new System.EventHandler(this.btnSairPesquisa_Click);
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Location = new System.Drawing.Point(139, 19);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(213, 20);
+            this.txtPesquisa.TabIndex = 0;
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(139, 61);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.TabIndex = 1;
+            this.btnOK.Text = "Ok";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlPesquisa);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnImprimir);
@@ -357,6 +403,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "frmCliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
+            this.pnlPesquisa.ResumeLayout(false);
+            this.pnlPesquisa.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,5 +441,9 @@
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Panel pnlPesquisa;
+        private System.Windows.Forms.Button btnSairPesquisa;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Button btnOK;
     }
 }
