@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,6 +62,8 @@
             this.btnSairPesquisa = new System.Windows.Forms.Button();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.pnlPesquisa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -304,6 +307,7 @@
             this.btnImprimir.TabIndex = 34;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnSair
             // 
@@ -331,7 +335,7 @@
             this.pnlPesquisa.Controls.Add(this.btnSairPesquisa);
             this.pnlPesquisa.Controls.Add(this.txtPesquisa);
             this.pnlPesquisa.Controls.Add(this.btnOK);
-            this.pnlPesquisa.Location = new System.Drawing.Point(150, 78);
+            this.pnlPesquisa.Location = new System.Drawing.Point(148, 59);
             this.pnlPesquisa.Name = "pnlPesquisa";
             this.pnlPesquisa.Size = new System.Drawing.Size(499, 100);
             this.pnlPesquisa.TabIndex = 67;
@@ -363,6 +367,21 @@
             this.btnOK.Text = "Ok";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // frmCliente
             // 
@@ -445,5 +464,7 @@
         private System.Windows.Forms.Button btnSairPesquisa;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Button btnOK;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

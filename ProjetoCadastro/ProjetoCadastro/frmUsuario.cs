@@ -255,10 +255,10 @@ namespace ProjetoCadastro
 
             strDados = "Ficha de usuário \n";
             strDados += "-------------------------------------------------\n";
-            strDados += "Código do funcionário: " + txtCodigo.Text+"\n";
-            strDados += "Nome do funcionário: " + txtNome.Text + "\n";
+            strDados += "Código do usuário: " + txtCodigo.Text+"\n";
+            strDados += "Nome do usuário: " + txtNome.Text + "\n";
             strDados += "Nivel do usuário: "+ txtNivel.Text +"\n";
-            strDados += "Login do usuário"+ txtlogin.Text +"\n";
+            strDados += "Login do usuário: "+ txtlogin.Text +"\n";
             strDados += "-------------------------------------------------\n";
 
             objImpressao.DrawString(strDados,new System.Drawing.Font("Arial",12,FontStyle.Bold),Brushes.Black,50,50);
@@ -267,6 +267,11 @@ namespace ProjetoCadastro
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             printPreviewDialog1.Show();
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

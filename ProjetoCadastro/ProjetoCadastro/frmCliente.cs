@@ -266,5 +266,30 @@ namespace ProjetoCadastro
         {
             pnlPesquisa.Visible = false;
         }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics objImpressao = e.Graphics;
+            string strDados;
+
+            strDados = "Ficha de Cliente \n";
+            strDados += "-------------------------------------------------\n";
+            strDados += "Código do Cliente: " + txtCod.Text + "\n";
+            strDados += "Nome do Cliente: " + txtNome.Text + "\n";
+            strDados += "Endereço do Cliente: " + txtEndereco.Text + "\n";
+            strDados += "Bairro do Cliente: " + txtBairro.Text + "\n";
+            strDados += "Cidade do Cliente: " + txtCidade.Text + "\n";
+            strDados += "CEP do Cliente: " + txtCEP.Text + "\n";
+            strDados += "CPF do Cliente: " + txtCPF.Text + "\n";
+            strDados += "Login do Cliente: " + txtLogin.Text + "\n";
+            strDados += "-------------------------------------------------\n";
+
+            objImpressao.DrawString(strDados, new System.Drawing.Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Show();
+        }
     }
 }
