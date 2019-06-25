@@ -247,5 +247,42 @@ namespace ProjetoCadastro
                 pnlPesquisa.Visible = false;
             }
         }
+
+        private void printDocument1_PrintPage_1(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics objImpressao = e.Graphics;
+            string strDados;
+            string qtStrings;
+            int cols = 51;
+            strDados  = "|-------------------------------------------------|\n";
+            //linha 1
+            qtStrings = "| Ficha de usuário"; // ou +(char)10+char(10)
+            strDados += "| Ficha de usuário";
+            for (int i = 0; i < cols - qtStrings.Length; i++) { strDados += " "; }
+            strDados += "|\n";
+            strDados += "|-------------------------------------------------|\n";
+            //linha 2
+            qtStrings = "| Código do funcionário: " + txtCodigo.Text;
+            strDados += "| Código do funcionário: " + txtCodigo.Text;
+            for (int i = 0; i < cols - qtStrings.Length; i++) { strDados += " "; }
+            strDados += "\n"+(cols - qtStrings.Length) +"\n";
+            strDados += "|\n";
+            //linha 3
+            qtStrings = "| Nome do funcionário: " + txtNome.Text;
+            strDados += "| Nome do funcionário: " + txtNome.Text;
+            for (int i = 0; i < cols - qtStrings.Length; i++) { strDados += " "; }
+            strDados += "|\n";
+
+            strDados += "| Nivel do usuário: "+ txtNivel.Text +"\n";
+            strDados += "| Login do usuário"+ txtlogin.Text +"\n";
+            strDados += "|-------------------------------------------------";
+
+            objImpressao.DrawString(strDados,new System.Drawing.Font("Arial",12,FontStyle.Bold),Brushes.Black,50,50);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Show();
+        }
     }
 }
