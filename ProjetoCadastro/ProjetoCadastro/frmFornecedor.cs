@@ -241,5 +241,26 @@ namespace ProjetoCadastro
         {
             pnlPesquisa.Visible = false;
         }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics objImpressao = e.Graphics;
+            string strDados;
+
+            strDados = "Ficha de Fornecedor \n";
+            strDados += "-------------------------------------------------\n";
+            strDados += "Código do Fornecedor: " + txtCod.Text + "\n";
+            strDados += "Nome do Fornecedor: " + txtNome.Text + "\n";
+            strDados += "Nivel do Fornecedor: " + txtCPF.Text + "\n";
+            strDados += "Login do Fornecedor: " + txtLogin.Text + "\n";
+            strDados += "-------------------------------------------------\n";
+
+            objImpressao.DrawString(strDados, new System.Drawing.Font("Arial", 12, FontStyle.Bold), Brushes.Black, 50, 50);
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Show();
+        }
     }
 }
