@@ -67,6 +67,62 @@ namespace ProjetoCadastro
             ff.ShowDialog();
         }
 
+        private void pdcUsuario_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Graphics objImpressao = e.Graphics;
+            string strDados = "", txt = "";
+            int pag = 0, i = 0, lin = 0;
+            bool cab = true, det = true;
+
+            while (cab)
+            {
+                pag++;
+                strDados += "Listagem de usuários\n";
+                txt = "Página: " + pag;
+                strDados += String.Format("{0,-64}",txt); strDados += " JDCSOFT\n";
+                for (int j = 0; j < 80; j++) { strDados += "-"; }
+                strDados += "\n";
+                strDados += String.Format("{0,-10}", "Código ");
+                strDados += String.Format("{0,-40}", "Nome ");
+                strDados += String.Format("{0,-10}", "Nivel ");
+                strDados += String.Format("{0,-20}", "Login ");
+                strDados += "\n";
+
+                for (int j = 0; j < 80; j++){ strDados += "-"; }
+                strDados += "\n";
+
+                lin += 5;
+                det = true;
+                while (det)
+                {
+                    strDados += String.Format("{0,-10}", (usuario[i].cd_usuario.ToString("000000")));
+                    strDados += String.Format("{0,-40}", usuario[i].nm_usuario);
+                    strDados += String.Format("{0,-10}", usuario[i].sg_nivel);
+                    strDados += String.Format("{0,-20}", usuario[i].nm_login) + "\n";
+                    i++;
+                    lin++;
+
+                    if (lin >= 66)
+                    {
+                        det = false;
+                    }
+                    if (i >= contUsu)
+                    {
+                        det = false;
+                        cab = false;
+                    }
+                }
+
+                strDados += (char)12;
+            }
+            objImpressao.DrawString(strDados, new System.Drawing.Font("courier new", 10, FontStyle.Bold), Brushes.Black, 50, 50);
+        }
+
+        private void usuárioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ppdUsuario.Show();
+        }
+
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUsuario fu = new frmUsuario();
