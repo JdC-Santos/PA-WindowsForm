@@ -91,7 +91,7 @@ namespace ProjetoCadastro
                 for (int j = 0; j < 80; j++){ strDados += "-"; }
                 strDados += "\n";
 
-                lin += 5;
+                lin = 5;
                 det = true;
                 while (det)
                 {
@@ -153,7 +153,7 @@ namespace ProjetoCadastro
                 for (int j = 0; j < 80; j++) { strDados += "-"; }
                 strDados += "\n";
 
-                lin += 5;
+                lin = 5;
                 det = true;
                 while (det)
                 {
@@ -165,7 +165,7 @@ namespace ProjetoCadastro
                     i++;
                     lin++;
 
-                    if (lin >= 7)
+                    if (lin >= 66)
                     {
                         det = false;
                     }
@@ -176,7 +176,7 @@ namespace ProjetoCadastro
                     }
                 }
 
-                strDados += (char)12;
+                strDados += "\t";
             }
             objImpressao.DrawString(strDados, new System.Drawing.Font("courier new", 10, FontStyle.Bold), Brushes.Black, 50, 50);
         }
@@ -210,7 +210,7 @@ namespace ProjetoCadastro
                 for (int j = 0; j < 80; j++) { strDados += "-"; }
                 strDados += "\n";
 
-                lin += 5;
+                lin = 5;
                 det = true;
                 while (det)
                 {
