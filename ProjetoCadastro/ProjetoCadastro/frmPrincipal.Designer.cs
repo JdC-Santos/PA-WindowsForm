@@ -113,12 +113,14 @@
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
             this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem1.Text = "Cliente";
+            this.clienteToolStripMenuItem1.Click += new System.EventHandler(this.clienteToolStripMenuItem1_Click);
             // 
             // fornecedorToolStripMenuItem1
             // 
             this.fornecedorToolStripMenuItem1.Name = "fornecedorToolStripMenuItem1";
             this.fornecedorToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.fornecedorToolStripMenuItem1.Text = "Fornecedor";
+            this.fornecedorToolStripMenuItem1.Click += new System.EventHandler(this.fornecedorToolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -129,6 +131,14 @@
             // pdcUsuario
             // 
             this.pdcUsuario.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdcUsuario_PrintPage);
+            // 
+            // pdcCliente
+            // 
+            this.pdcCliente.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdcCliente_PrintPage);
+            // 
+            // pdcFornecedor
+            // 
+            this.pdcFornecedor.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdcFornecedor_PrintPage);
             // 
             // ppdUsuario
             // 
